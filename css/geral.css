@@ -7,6 +7,7 @@
 }
 
 .item{
+    font-weight: 600;
     text-decoration: none;
     color: white;
 }
@@ -16,6 +17,7 @@
 }
 
 .atual{
+    font-weight: 600;
     text-decoration: none;
     color: white;
     background-color: rgb(116, 69, 162);
