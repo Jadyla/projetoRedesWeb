@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
     <title>Ferramenta</title>
 </head>
 <body>
@@ -26,7 +27,53 @@
                 <a class="nav-link item" href="pages/sensor4.html">Sensor 4</a>
             </li>
         </ul>
-      </nav>
+    </nav>
 
+    <section class="ferramenta container">
+        AQUI VAI A DESCRIÇÃO DA FERRAMENTA
+    </section>
+
+
+    <section class="descricao justify-content-center">
+        <h3 class="tema">Descrição dos sensores</h3>
+        <div class="miniaturas">
+            <!--MINIATURA SENSOR 1-->
+            <div class="frames">
+                <h3 class="titulo" >Sensor 1</h3>
+                <canvas id="sensor1" width="280" height="150"></canvas>
+                <script src="js/sensor1.js"></script>
+                <br>
+                <a class="ver" href="pages/sensor1.html">ver</a>
+            </div>
+
+            <!--MINIATURA SENSOR 2-->
+            <div class="frames">
+                <h3 class="titulo" >Sensor 2</h3>
+                <canvas id="sensor2" width="280" height="150"></canvas>
+                <script src="js/sensor2.js"></script>
+                <br>
+                <a class="ver" href="pages/sensor2.html">ver</a>
+            </div>
+
+            <!--MINIATURA SENSOR 3-->
+            <div class="frames">
+                <h3 class="titulo" >Sensor 3</h3>
+                <canvas id="sensor2" width="280" height="150"></canvas>
+                <script src="js/sensor2.js"></script>
+                <br>
+                <a class="ver" href="pages/sensor3.html">ver</a>
+            </div>
+
+            <!--MINIATURA SENSOR 4-->
+            <div class="frames">
+                <h3 class="titulo" >Sensor 4</h3>
+                <canvas id="sensor2" width="280" height="150"></canvas>
+                <script src="js/sensor2.js"></script>
+                <br>
+                <a class="ver" href="pages/sensor4.html">ver</a>
+            </div>
+        </div>
+        
+    </section>
 </body>
 </html>
