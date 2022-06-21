@@ -30,3 +30,33 @@
 .atual:hover{
     color: white;
 }
+
+.titulo{
+    font-size: 25px;
+    margin-top: 2%;
+    margin-left: 5%;
+    font-weight: 600;
+}
+
+hr{
+    margin: 1% 5%;
+}
+
+footer{
+    color: white;
+    background-color: rgb(185, 143, 223);
+    text-align: center;
+    padding: 2% 10%;
+    margin-top: 2%;
+}
+
+.rodape{
+    display: flex;
+    text-align: left;
+    line-height: 10px;
+}
+
+.snmp_descricao{
+    text-align: center;
+    height: 300px;
+}

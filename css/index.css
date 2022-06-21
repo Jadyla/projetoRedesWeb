@@ -28,7 +28,7 @@
     font-size: 42px;
 }
 
-.titulo{
+.titulo_sensor{
     font-size: 20px;
     margin-top: 2%;
     margin-left: 5%;
@@ -43,6 +43,8 @@
 .miniaturas{
     display: flex;
     justify-content: center;
+    padding-left: 4%;
+    padding-right: 4%;
 }
 
 .frames{
@@ -68,8 +70,6 @@
 
 .cada_miniatura{
     display: block;
-    margin-left: 1%;
-    margin-right: 1%;
     text-align: justify;
 }
 
@@ -86,12 +86,16 @@
 .ver:hover{
     text-decoration: none;
     color: white;
-    background-color: #ed680f;
+    background-color: #df6310;
+    transition-duration: 300ms;
 }
 
 .explicacao{
     color: white;
-    margin: 10% 15% 8% 5%;
+    padding: 5%;
+    margin-bottom: 10%;
+    width: 300px;
+    height: 120px;
 }
 
 @media only screen and (max-width: 991px){
