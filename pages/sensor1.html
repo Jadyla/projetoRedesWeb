@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/geral.css">
+    <link rel="stylesheet" href="../css/sensor1.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <title>Ferramenta</title>
+</head>
+<body>
+    <nav class="menu p-3">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link item" href="../index.html">Principal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link atual" href="../pages/sensor1.html">Sensor 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link item" href="../pages/sensor2.html">Sensor 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link item" href="../pages/sensor3.html">Sensor 3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link item" href="../pages/sensor4.html">Sensor 4</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="titulo">Nome do sensor</div>
+    <hr>
+    <section class="container">
+        <canvas id="myChart" width="350" height="100"></canvas>
+        <script src="../js/sensor1.js"></script>
+    </section>
+    <section class="container infos">
+        <form class="container form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Digite o IP" aria-label="IP">
+            <button class="buscar btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+        <button class="iniciar btn btn-primary my-2 my-sm-0" type="button">Iniciar</button>
+        <button class="parar btn btn-secondary my-2 my-sm-0" type="button">Parar</button>
+    </section>
+
+    
+</body>
+</html>

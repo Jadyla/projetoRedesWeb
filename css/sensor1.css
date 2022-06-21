@@ -1,0 +1,19 @@
+.titulo{
+    font-size: 25px;
+    margin-top: 2%;
+    margin-left: 5%;
+    font-weight: 600;
+}
+
+hr{
+    margin: 1% 5%;
+}
+
+.infos{
+    margin-top: 3%;
+    display: flex;
+}
+
+.iniciar{
+    margin-right: 0.8%;
+}

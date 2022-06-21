@@ -1,0 +1,27 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu{
+    background-color: rgb(185, 143, 223);
+}
+
+.item{
+    text-decoration: none;
+    color: white;
+}
+
+.item:hover{
+    color: rgb(116, 69, 162);
+}
+
+.atual{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(116, 69, 162);
+    border-radius: 10px;
+}
+
+.atual:hover{
+    color: white;
+}
