@@ -56,7 +56,7 @@ footer{
     line-height: 10px;
 }
 
-.snmp_descricao{
-    text-align: center;
-    height: 300px;
+.foto{
+    width: 20%;
+    border-radius: 50px;
 }
