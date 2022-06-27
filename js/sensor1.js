@@ -37,7 +37,9 @@ const sensor1 = new Chart(ctx, {
 
 //funcao para receber e buscar o ip
 function buscarIP(){
-
+    let ip;
+    ip = document.getElementById("recebeIp");
+    alert(ip.value);
 }
 
 //funcao para parar o monitoramento
