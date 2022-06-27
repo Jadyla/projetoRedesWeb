@@ -1,53 +1,80 @@
+let labelIPInX = [];
+let dataIPInY = [];
+let timer;
+
 const ctx = document.getElementById('sensor1').getContext('2d');
+
 const sensor1 = new Chart(ctx, {
-    type: 'bar',
+    type: 'line',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: labelIPInX,
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: dataIPInY,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 99, 132, 0.2)'
+               
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(255, 99, 132, 1)'
             ],
             borderWidth: 1
         }]
     },
     options: {
         scales: {
+            x: {
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Data/Hora'
+                }
+            },
             y: {
-                beginAtZero: true
+                display: true,
+                title: {
+                    display: true,
+                    text: 'Quantidade de Datagrmas'
+                }
             }
         }
     }
 });
 
 
-//funcao para receber e buscar o ip
-function buscarIP(){
+//funcao para receber e buscar o ip ajax
+function buscarIP() {
     let ip;
-    ip = document.getElementById("recebeIp");
-    alert(ip.value);
+    ip = document.getElementById("recebeIp").value;
+    //alert(data.ip);
+    $.ajax({
+        url: "../snmp.php",
+        method: "POST",
+        data: { ip: ip },
+        success: function (response) {
+            console.log(response);
+            var dateTime = new Date();
+            labelIPInX.push(dateTime.toLocaleTimeString());
+            dataIPInY.push(parseInt(response));
+            sensor1.update();
+        }
+    })
 }
 
 //funcao para parar o monitoramento
-function parar(){
-
+function parar() {
+    clearInterval(timer);
 }
 
 //funcao para iniciar monitoramento
-function iniciar(){
+document.getElementById("btnIniciar").addEventListener('click',function(){
 
-}
+  //  let ip = document.getElementById("recebeIp").value;
+    
+   // console.log("Iniciando o Monitoramento!" + ip);
+    timer = setInterval(buscarIP,2000);
+    
+    
+    console.log("Timer " + timer);
+});
+

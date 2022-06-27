@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/geral.css">
     <link rel="stylesheet" href="../css/sensor1.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="icon" type="imagem/png" href="../img/favicon.png"/>
     <title>SNMPget</title>
 </head>
@@ -34,19 +35,19 @@
     <hr>
     <section class="container">
         <canvas id="sensor1" width="350" height="100"></canvas>
-        <script src="../js/sensor1.js"></script>
+        <!-- <script src="../js/sensor1.js"></script> -->
     </section>
     <section class="container infos">
         <form class="container form-inline my-2 my-lg-0">
             <input id="recebeIp" class="form-control mr-sm-2" type="search" placeholder="Digite o IP" aria-label="IP">
-            <button id="busca" class="buscar btn btn-success my-2 my-sm-0" type="submit" onclick=buscarIP()>Buscar</button>
+            <button id="busca" class="buscar btn btn-success my-2 my-sm-0" type="button">Buscar</button>
         </form>
-        <button class="iniciar btn btn-primary my-2 my-sm-0" type="button">Iniciar</button>
-        <button class="parar btn btn-secondary my-2 my-sm-0" type="button">Parar</button>
+        <button class="iniciar btn btn-primary my-2 my-sm-0" type="button" id="btnIniciar">Iniciar</button>
+        <button class="parar btn btn-secondary my-2 my-sm-0" type="button" id="btnParar" onclick="parar()">Parar</button>
     </section>
 
     
-
+    
 
     <footer>
         <div class="container rodape">
@@ -68,5 +69,6 @@
         </div>
         
     </footer>
+    <script src="../js/sensor1.js"></script>
 </body>
 </html>
