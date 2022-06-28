@@ -44,13 +44,12 @@ const sensor1 = new Chart(ctx, {
 
 //funcao para receber e buscar o ip ajax
 function buscarIP() {
-    let ip;
-    ip = document.getElementById("recebeIp").value;
+    let ip =  document.getElementById("recebeIp").value;
     //alert(data.ip);
     $.ajax({
-        url: "../snmp.php",
+        url: "../sensor1.php",
         method: "POST",
-        data: { ip: ip },
+        data: { ip: ip},
         success: function (response) {
             console.log(response);
             var dateTime = new Date();
@@ -66,10 +65,6 @@ document.getElementById("btnParar").addEventListener('click',function(){
     console.log("Parando Monitoramento!!");
     clearInterval(timer);
 });
-
-function parar() {
-    clearInterval(timer);
-}
 
 //funcao para iniciar monitoramento
 document.getElementById("btnIniciar").addEventListener('click',function(){
