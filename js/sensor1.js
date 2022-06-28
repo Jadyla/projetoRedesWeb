@@ -62,6 +62,11 @@ function buscarIP() {
 }
 
 //funcao para parar o monitoramento
+document.getElementById("btnParar").addEventListener('click',function(){
+    console.log("Parando Monitoramento!!");
+    clearInterval(timer);
+});
+
 function parar() {
     clearInterval(timer);
 }
@@ -69,11 +74,10 @@ function parar() {
 //funcao para iniciar monitoramento
 document.getElementById("btnIniciar").addEventListener('click',function(){
 
-  //  let ip = document.getElementById("recebeIp").value;
+    let ip = document.getElementById("recebeIp").value;
     
-   // console.log("Iniciando o Monitoramento!" + ip);
+    console.log("Iniciando o Monitoramento!" + ip);
     timer = setInterval(buscarIP,2000);
-    
     
     console.log("Timer " + timer);
 });
