@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/geral.css">
     <link rel="stylesheet" href="../css/sensor3.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="icon" type="imagem/png" href="../img/favicon.png"/>
     <title>SNMPget</title>
 </head>
@@ -32,9 +33,25 @@
 
     <div class="titulo">Sistema Operacional</div>
     <hr>
+
+    <section class="container descricao text-center">
+        <p class="text-left">
+            O sensor <b>Sistema Operacional</b> tem como objetivo mostrar as informações do sistema operacional da máquina em consulta. Para isso foi utilizado o
+            oid <i>sysDescr</i>. Para realizar a consulta basta informar um <b>IP válido</b>, e que nesta máquina o protocolo <b>SNMP</b> esteja ativo. Após a consulta 
+            serão informados o sistema operacional, hardware e software do equipamento.
+        </p>
+    </section>
     
+    <section class="container infos">
+        <form class="container form-inline my-2 my-lg-0 text-center">
+            <input id="recebeIp" class="form-control mr-sm-2" type="search" placeholder="Digite o IP" aria-label="IP">
+            <button id="busca" class="buscar btn btn-success my-2 my-sm-0" type="button">Buscar</button>
+            <h4 id="printaIp">IP em consulta: </h4>
+        </form>
+    </section>
+
     <section class="container text-center">
-        <img id="imgSO" src="" alt="">
+        <img id="imgSO" src="../img/vazio.png" alt="">
         <div class="text-left">
             <p id="hardware"></p>
             <p id="software"></p>

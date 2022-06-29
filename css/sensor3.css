@@ -3,3 +3,20 @@
     height: 60%;
     margin-top: 5%;
 }
+
+.infos{
+    margin-top: 3%;
+    display: flex;
+}
+
+.iniciar{
+    margin-right: 0.8%;
+}
+
+#printaIp{
+    margin-left: 2%;
+}
+
+.descricao{
+    margin: 1% 5%;
+}
