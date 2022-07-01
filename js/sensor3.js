@@ -9,13 +9,14 @@ button.addEventListener('click', function click(e){
         method: "POST",
         data: { ip: ip},
         success: function (response) {
+            var infos = JSON.parse(response);
             console.log(response);
-            if (response == "Windows"){
+            if (infos.so == "Windows"){
                 var img = document.querySelector("#imgSO");
                 img.setAttribute('src', '../img/windows.png');
-            }else if (response == "Linux"){
+            }else{
                 var img = document.querySelector("#imgSO");
-                img.setAttribute('src', '../img/linux');
+                img.setAttribute('src', '../img/linux.png');
             }
         }
     })
