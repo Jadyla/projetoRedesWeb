@@ -17,7 +17,12 @@ button.addEventListener('click', function click(e){
             }else{
                 var img = document.querySelector("#imgSO");
                 img.setAttribute('src', '../img/linux.png');
+                console.log(infos);
             }
+            document.querySelector("#so").innerHTML = "Sistema Operacional: " + infos.so;
+            document.querySelector("#nome").innerHTML = "Nome: " + infos.nome;
+            document.querySelector("#hardware").innerHTML = "Hardware: " + infos.hard;
+            document.querySelector("#software").innerHTML = "Software: " + infos.soft;
         }
     })
 })

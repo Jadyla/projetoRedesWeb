@@ -1,19 +1,44 @@
 <?php
-$ip = $_POST["ip"];
+//$ip = $_POST["ip"];
+//$ip = "10.14.160.69"; //ip Douglas
+$ip = "localhost";
  // print $ip;
   
   $community = "public";
-  $oid = "1.3.6.1.2.1.1.1.0";
 
-  $ipInDelivers = snmp2_get($ip,$community ,$oid);
+  $oidDesc = "1.3.6.1.2.1.1.1.0";
+  $oidNome = "1.3.6.1.2.1.1.5.0";
 
-  //retira somente o dado inteiro do retorno da consulta
-  $ipIn = explode("-", $ipInDelivers);
-  $ipSoft = explode(" ", $ipIn[1]);
+  $compDesc = snmp2_get($ip,$community ,$oidDesc);
+  $compNome = snmp2_get($ip,$community ,$oidNome);
+  echo $compDesc;
+  //software
+  $aux = explode("-", $compDesc);
+  $aux2 = explode("\"", $aux[1]);
+  $soft = explode(" ", $aux2[0]);
+  $tam = count($soft);
+  
+  if ($tam > 2){
+    //nome
+    $nome = explode("\"", $compNome);
 
-  //var_dump($ipIn);
-  //gera a saída que será recebida pelo front-end
-  //echo $ipSoft[1];
-  $arr = array('so' => $ipSoft[2]);
-  echo json_encode($arr);
+    //hardware
+    $hard = explode("\"", $aux[0]);
+
+    //gera a saída que será recebida pelo front-end
+    //echo $ipSoft[1];
+    $arr = array('so' => $soft[2], 'nome' => $nome[1], 'soft' => $aux2[0], 'hard' => $hard[1]);
+    echo json_encode($arr);
+    //echo $soft[2];
+    //echo $nome[1];
+  }else{
+    $nome = explode("\"", $compNome);
+    $soft = "Nao identificado";
+    $hard = "Nao identificado";
+    $so = "Linux";
+
+    $arr = array('so' => $so, 'nome' => $nome[1], 'soft' => $soft, 'hard' => $hard);
+    echo json_encode($arr);
+  }
+  
 ?>
