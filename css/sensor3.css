@@ -21,3 +21,23 @@
 .descricao{
     margin: 1% 5%;
 }
+
+.descricaoSys{
+    background-color: rgb(247, 247, 247);
+    padding-bottom: 1px;
+    margin-top: 20px;
+}
+
+.informeIp{
+    margin-left: 20px;
+}
+
+.tempo{
+    margin-left: 1%;
+    margin-right: 8px;
+}
+
+#erro{
+    margin-left: 20px;
+    color: red;
+}

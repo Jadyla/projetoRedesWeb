@@ -1,7 +1,7 @@
 <?php
-//$ip = $_POST["ip"];
+$ip = $_POST["ip"];
 //$ip = "10.14.160.69"; //ip Douglas
-$ip = "localhost";
+//$ip = "localhost";
  // print $ip;
   
   $community = "public";
@@ -11,7 +11,6 @@ $ip = "localhost";
 
   $compDesc = snmp2_get($ip,$community ,$oidDesc);
   $compNome = snmp2_get($ip,$community ,$oidNome);
-  echo $compDesc;
   //software
   $aux = explode("-", $compDesc);
   $aux2 = explode("\"", $aux[1]);
