@@ -5,7 +5,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/geral.css">
     <link rel="stylesheet" href="../css/sensor2.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script defer src="../js/sensor2.js"></script>
     <link rel="icon" type="imagem/png" href="../img/favicon.png"/>
     <title>SNMPget</title>
 </head>
@@ -19,7 +21,7 @@
                 <a class="nav-link item" href="../pages/sensor1.html">Memória</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link atual" href="../pages/sensor2.html">Temperatura</a>
+                <a class="nav-link atual" href="../pages/sensor2.html">Processos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link item" href="../pages/sensor3.html">Sistema Operacional</a>
@@ -30,10 +32,32 @@
         </ul>
     </nav>
 
-    <div class="titulo">Temperatura</div>
+    <div class="titulo">Processos</div>
     <hr>
 
+    <section class="container descricao text-center">
+        <p class="text-left">
+            O sensor <b>Processos</b> visa apresentar a quantidade de processos que estão em execução no momento. Para realizar a consulta basta informar 
+            um <b>IP válido</b>, e que nesta máquina o protocolo <b>SNMP</b> esteja ativo. Após a consulta será informado de maneira dinâmica a quantidade de 
+            processos em operação. <br>
+            Para verificar de fato seu funcionamento basta gerar novos processos abrindo novos abas no navegador ou ativando recursos.
+        </p>
+    </section>
 
+    <section class="container">
+        <canvas id="sensor2" width="350" height="100"></canvas>
+        <!-- <script src="../js/sensor1.js"></script> -->
+    </section>
+    <section class="container infos">
+        <form class="container form-inline my-2 my-lg-0">
+            <input id="recebeIp" class="form-control mr-sm-2" type="search" placeholder="Digite o IP" aria-label="IP">
+            <button id="busca" class="buscar btn btn-success my-2 my-sm-0" type="button" onclick="buscarIP()">Buscar</button>
+            <h4 id="printaIp">Informe um <b>IP</b> para consulta</h4>
+            <div id="carregar" class="nada" role="nada" style="margin-left: 20px;"></div>
+        </form>
+        <button class="iniciar btn btn-primary my-2 my-sm-0" type="button" id="btnIniciar">Iniciar</button>
+        <button class="parar btn btn-secondary my-2 my-sm-0" type="button" id="btnParar">Parar</button>
+    </section>
 
 
     <footer>
@@ -56,5 +80,6 @@
         </div>
         
     </footer>
+    <script src="../js/sensor2.js"></script>
 </body>
 </html>

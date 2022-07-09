@@ -9,10 +9,10 @@ const sensor1 = new Chart(ctx, {
     data: {
         labels: labelIPInX,
         datasets: [{
-            label: '# of Votes',
+            label: 'Memória',
             data: dataIPInY,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)'
+                'rgba(255, 99, 132, 1)'
                
             ],
             borderColor: [
