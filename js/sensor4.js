@@ -80,16 +80,27 @@ button.addEventListener('click', function click(e){
         method: "POST",
         data: { ip: ip},
         success: function (response){
-            //5 segundos antes de fornecer a resposta
-            window.setTimeout(function() {
+            //console.log(response);
+            if (response == "sucesso"){
+                console.log("FOIIIII");
                 document.querySelector("#printaIp").innerHTML = "IP em consulta: " + "<b>" + ip + "</b>";
+                document.querySelector("#erro").innerHTML = "";
                 buttonIniciar.disabled = false;
                 buttonParar.disabled = false;
                 carrega.setAttribute('class', '');
                 carrega.setAttribute('role', '');
-            }, 5000);
+            }else{
+                console.log("OLHA O ERRO AE");
+                buttonIniciar.disabled = true;
+                buttonParar.disabled = true;
+                carrega.setAttribute('class', '');
+                carrega.setAttribute('role', '');
+                document.querySelector("#printaIp").innerHTML = "IP em consulta: ";
+                document.querySelector("#erro").innerHTML = "ERRO na consulta (infome outro <b>IP</b>)";
+            }
         }
     })
+    
 })
 
 //objetos para gerar diferença na quantidade de datagramas UDP, e não somente o valor
