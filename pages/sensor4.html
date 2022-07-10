@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/geral.css">
     <link rel="stylesheet" href="../css/sensor4.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
     <link rel="icon" type="imagem/png" href="../img/favicon.png"/>
     <title>SNMPget</title>
@@ -25,14 +26,38 @@
                 <a class="nav-link item" href="../pages/sensor3.html">Sistema Operacional</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link atual" href="../pages/sensor4.html">Sensor 4</a>
+                <a class="nav-link atual" href="../pages/sensor4.html">Datagramas UDP</a>
             </li>
         </ul>
     </nav>
 
-    <div class="titulo">Nome do sensor</div>
+    <div class="titulo">Datagramas UDP recebidos e enviados</div>
     <hr>
+
+    <section class="container descricao text-center">
+        <p class="text-left">
+            O sensor <b>Datagramas UDP</b> apresenta a quantidade de datagramas UDP enviados e recebidos <b>a partir do início da simulação</b>. Para realizar a consulta basta informar 
+            um <b>IP válido</b>, e que nesta máquina o protocolo <b>SNMP</b> esteja ativo. Após a consulta será informado de maneira dinâmica a quantidade de 
+            datagramas enviados e recebidos naquele intervalo de tempo.<br>
+            Para verificar de fato seu funcionamento atente-se a posicionar o <b>mouse sobre o gráfico</b> gerado, pois os valores são próximos entre si.
+        </p>
+    </section>
     
+    <section class="container">
+        <canvas id="sensor4" width="350" height="100"></canvas>
+        <!-- <script src="../js/sensor1.js"></script> -->
+    </section>
+
+    <section class="container infos">
+        <form class="container form-inline my-2 my-lg-0">
+            <input id="recebeIp" class="form-control mr-sm-2" type="search" placeholder="Digite o IP" aria-label="IP">
+            <button id="busca" class="buscar btn btn-success my-2 my-sm-0" type="button" onclick="buscarIP()">Buscar</button>
+            <h4 id="printaIp">Informe um <b>IP</b> para consulta</h4>
+            <div id="carregar" class="nada" role="nada" style="margin-left: 20px;"></div>
+        </form>
+        <button class="iniciar btn btn-primary my-2 my-sm-0" type="button" id="btnIniciar">Iniciar</button>
+        <button class="parar btn btn-secondary my-2 my-sm-0" type="button" id="btnParar">Parar</button>
+    </section>
 
 
 
@@ -56,5 +81,6 @@
         </div>
         
     </footer>
+    <script src="../js/sensor4.js"></script>
 </body>
 </html>

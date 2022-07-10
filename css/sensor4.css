@@ -1,0 +1,12 @@
+.infos{
+    margin-top: 3%;
+    display: flex;
+}
+
+.iniciar{
+    margin-right: 0.8%;
+}
+
+#printaIp{
+    margin-left: 2%;
+}
