@@ -18,3 +18,8 @@
 .informeIp{
     margin-left: 20px;
 }
+
+#erro{
+    margin-left: 20px;
+    color: red;
+}

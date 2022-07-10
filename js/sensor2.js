@@ -11,7 +11,7 @@ const myChart = new Chart(ctx2, {
             label: 'Quantidade de Processos',
             data: dataIPInY,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 99, 132, 1)',
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -68,13 +68,23 @@ button.addEventListener('click', function click(e){
         data: { ip: ip},
         success: function (response){
             //5 segundos antes de fornecer a resposta
-            window.setTimeout(function() {
+            if (response == "sucesso"){
+                console.log("FOIIIII");
                 document.querySelector("#printaIp").innerHTML = "IP em consulta: " + "<b>" + ip + "</b>";
+                document.querySelector("#erro").innerHTML = "";
                 buttonIniciar.disabled = false;
                 buttonParar.disabled = false;
                 carrega.setAttribute('class', '');
                 carrega.setAttribute('role', '');
-            }, 5000);
+            }else{
+                console.log("OLHA O ERRO AE");
+                buttonIniciar.disabled = true;
+                buttonParar.disabled = true;
+                carrega.setAttribute('class', '');
+                carrega.setAttribute('role', '');
+                document.querySelector("#printaIp").innerHTML = "IP em consulta: ";
+                document.querySelector("#erro").innerHTML = "ERRO na consulta (infome outro <b>IP</b>)";
+            }
         }
     })
 })
