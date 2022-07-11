@@ -147,3 +147,12 @@
         margin-left: 20%;
     }
 }
+
+@media (max-width: 1004px){
+    .explicacao{
+        margin-bottom: 20%;
+    }
+    .cada_miniatura{
+        margin-bottom: 15%
+    }
+}
