@@ -1,18 +1,21 @@
 <?php
-  
-  $ip = $_POST['ip']; 
-
-  echo $ip;
-
+  //$ip = $_POST["ip"];
+  $ip = "localhost";
   $community = "public";
-  
-  $oidMemory = ".1.3.6.1.2.1.25.2.2.0";
-  $oidProcessos = ".1.3.6.1.2.1.25.1.6.0";
-    
-  $memory = snmp2_get($ip,$community ,$oidMemory);
-  $process = snmp2_get($ip,$community,$oidProcessos);
-    
-  echo ("Ram : $memory");
-  echo ("Process : $process");
+  $oidTotal = "1.3.6.1.2.1.4.3.0";
+  $oidUdpRecebidos = ".1.3.6.1.2.1.7.1.0";
 
-?>  
+  $dataTotal = snmp2_get( $ip,$community ,$oidTotal);
+  $dataUdp = snmp2_get( $ip,$community ,$oidUdpRecebidos);
+
+  $aux = explode(" ", $dataTotal);
+  $aux2 = explode(" ", $dataUdp);
+
+  $dataTotalInt = intval($aux[1]);
+  $daraUdpInt = intval($aux2[1]);
+
+  $porcent = $daraUdpInt/$dataTotalInt;
+
+  $arr = array('total' => $dataTotalInt, 'udp' => $daraUdpInt, 'porcent' => $porcent*100);
+  echo json_encode($arr);
+?>

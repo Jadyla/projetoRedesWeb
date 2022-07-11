@@ -12,6 +12,10 @@
 }
 
 #erro{
-    margin-left: 20px;
+    margin-left: 12px;
     color: red;
+}
+
+.parar{
+    margin-right: 0.8%;
 }

@@ -6,3 +6,16 @@
 .iniciar{
     margin-right: 0.8%;
 }
+
+#printaIp{
+    margin-left: 2%;
+}
+
+#erro{
+    margin-left: 12px;
+    color: red;
+}
+
+.parar{
+    margin-right: 0.8%;
+}

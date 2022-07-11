@@ -96,7 +96,7 @@ button.addEventListener('click', function click(e){
                 carrega.setAttribute('class', '');
                 carrega.setAttribute('role', '');
                 document.querySelector("#printaIp").innerHTML = "IP em consulta: ";
-                document.querySelector("#erro").innerHTML = "ERRO na consulta (infome outro <b>IP</b>)";
+                document.querySelector("#erro").innerHTML = "<b>ERRO</b> na consulta (infome outro <b>IP</b>)";
             }
         }
     })
@@ -157,3 +157,7 @@ function snmpGet(){
     })
 }
 
+let buttonReiniciar = document.querySelector('#btnReiniciar');
+buttonReiniciar.addEventListener('click', function click(e){
+    document.location.reload(true);
+})

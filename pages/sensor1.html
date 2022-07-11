@@ -17,7 +17,7 @@
                 <a class="nav-link item" href="../index.html">Principal</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link atual" href="../pages/sensor1.html">Memória</a>
+                <a class="nav-link atual" href="../pages/sensor1.html">UDP/Datagramas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link item" href="../pages/sensor2.html">Processos</a>
@@ -26,13 +26,23 @@
                 <a class="nav-link item" href="../pages/sensor3.html">Sistema Operacional</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link item" href="../pages/sensor4.html">Sensor 4</a>
+                <a class="nav-link item" href="../pages/sensor4.html">Datagramas UDP</a>
             </li>
         </ul>
     </nav>
 
-    <div class="titulo">Memória</div>
+    <div class="titulo">Datagramas UDP / Datagramas totais</div>
     <hr>
+
+    <section class="container descricao text-center">
+        <p class="text-left">
+            O sensor <b>UDP/Datagramas</b> visa apresentar a quantidade de datagramas UDP recebidos em relação ao total. Para realizar a consulta basta informar 
+            um <b>IP válido</b>, e que nesta máquina o protocolo <b>SNMP</b> esteja ativo. Após a consulta será informado de maneira dinâmica a quantidade de 
+            datagramas UDP recebidos, a quantidade total de datagramas e a porcentagem de representação dos datagramas UDP.<br>
+            Para verificar de fato seu funcionamento atente-se a posicionar o <b>mouse sobre o gráfico</b> gerado, pois os valores são próximos entre si.
+        </p>
+    </section>
+
     <section class="container">
         <canvas id="sensor1" width="350" height="100"></canvas>
         <!-- <script src="../js/sensor1.js"></script> -->
@@ -41,9 +51,13 @@
         <form class="container form-inline my-2 my-lg-0">
             <input id="recebeIp" class="form-control mr-sm-2" type="search" placeholder="Digite o IP" aria-label="IP">
             <button id="busca" class="buscar btn btn-success my-2 my-sm-0" type="button" onclick="buscarIP()">Buscar</button>
+            <h4 id="printaIp">Informe um <b>IP</b> para consulta</h4>
+            <h4 id="erro"></h4>
+            <div id="carregar" class="nada" role="nada" style="margin-left: 20px;"></div>
         </form>
-        <button class="iniciar btn btn-primary my-2 my-sm-0" type="button" id="btnIniciar">Iniciar</button>
-        <button class="parar btn btn-secondary my-2 my-sm-0" type="button" id="btnParar">Parar</button>
+        <button class="iniciar btn btn-primary my-2 my-sm-0 btn-sm" type="button" id="btnIniciar">Iniciar</button>
+        <button class="parar btn btn-secondary my-2 my-sm-0 btn-sm" type="button" id="btnParar">Parar</button>
+        <button class="reiniciar btn btn btn-light my-2 my-sm-0 btn-sm" type="button" id="btnReiniciar">Reiniciar</button>
     </section>
 
     
