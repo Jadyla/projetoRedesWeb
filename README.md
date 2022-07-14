@@ -27,3 +27,10 @@ Os sensores são definimos a partir de cada <b>oid</b> utilizado. Com a informa�
 ### 💻 Configurações
 Para realizar a consulta de um IP é necessário que a máquina em questão esteja com o <b>protocolo SNMP habilitado e em execução</b>. Além disso, é necessária 
 a ativação do Apache, através de um pacote servidor que suporte a linguagem php.
+
+### ✍ Autoras
+Clique nas imagens abaixo para acessar os perfis :)
+<div style="display: flex;">
+  <a href="https://github.com/Jadyla" target="_blank"><img src="https://avatars.githubusercontent.com/u/89875948?v=4" style="width: 70px; margin-right: 50px;"</a>
+  <a href="https://github.com/MariaClaraSanchez" target="_blank"><img src="https://avatars.githubusercontent.com/u/57421273?v=4" style="width: 70px;"</a>
+</div>
